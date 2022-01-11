@@ -1,69 +1,69 @@
 print("please note this calculator only solves simple 2 or 3 didget number equations! Thank You!")
-input("""
-Press enter to continue
-""")
+input("\nPress enter to continue\n""")
 while 1:
   try:
     num1 = float(input("What's your 1st num?"))
-    break
     
   except ValueError:
     print("not a valid number")
-formula = input("""
-Please enter one of the following: 
-+ - * / 
-""")
-
+    continue
+    
+formula = input("\nPlease enter one of the following:\n+ - * / ")
 
 num2 = float(input("What it your second number?"))
-opNum = input("Do you want a 3rd number?").upper()
-if opNum == "yes":
-  formula2 = input("""
-  Please enter one of the following:
-  + - * / """)
-  num3 = float(input("What is your 3rd number?")).upper()
-  if formula2 == "+":
+while 1:
+  opNum = input("Do you want a 3rd number?").upper()
+  if opNum[0] == "y":
+    formula2 = input("\nPlease enter one of the following:\n+ - * / ")
+    num3 = float(input("What is your 3rd number?"))
+    if formula2 == "+":
+      if formula == "+":
+        print("the answer is:" ,num1 + num2 + num3)
+      elif formula == "-":
+        print("the answer is:" ,num1 - num2 + num3)
+      elif formula == "*":
+        print("the answer is:" ,num1 * num2 + num3)
+      elif formula == "/":
+        print("the answer is:" ,num1 / num2 + num3)
+    elif formula2 == "-":
+      if formula == "+":
+        print("the answer is:" ,num1 + num2 - num3)
+      elif formula == "-":
+        print("the answer is:" ,num1 - num2 - num3)
+      elif formula == "*":
+        print("the answer is:" ,num1 * num2 - num3)
+      elif formula == "/":
+        print("the answer is:" ,num1 / num2 - num3)
+    elif formula2 == "*":
+      if formula == "+":
+        print("the answer is:" ,num1 + num2 * num3)
+      elif formula == "-":
+        print("the answer is:" ,num1 - num2 * num3)
+      elif formula == "*":
+        print("the answer is:" ,num1 * num2 * num3)
+      elif formula == "/":
+        print("the answer is:" ,num1 / num2 * num3)
+    elif formula2 == "/":
+      if formula == "+":
+        print("the answer is:" ,num1 + num2 / num3)
+      elif formula == "-":
+        print("the answer is:" ,num1 - num2 / num3)
+      elif formula == "*":
+        print("the answer is:" ,num1 * num2 / num3)
+      elif formula == "/":
+        print("the answer is:" ,num1 / num2 / num3)
+     break
+  elif opNum[0] == "n":    
     if formula == "+":
-      print"the answer is:" ,num1 + num2 + num3
+      print("the answer is:" ,num1 + num2)
     elif formula == "-":
-      print"the answer is:" ,num1 - num2 + num3
+      print("the answer is:" ,num1 - num2)
     elif formula == "*":
-      print"the answer is:" ,num1 * num2 + num3
+      print("the answer is:" ,num1 * num2)
     elif formula == "/":
-      print"the answer is:" ,num1 / num2 + num3
-  if formula2 == "-":
-    if formula == "+":
-      print"the answer is:" ,num1 + num2 - num3
-    elif formula == "-":
-      print"the answer is:" ,num1 - num2 - num3
-    elif formula == "*":
-      print"the answer is:" ,num1 * num2 - num3
-    elif formula == "/":
-      print"the answer is:" ,num1 / num2 - num3
-  if formula2 == "*":
-    if formula == "+":
-      print"the answer is:" ,num1 + num2 * num3
-    elif formula == "-":
-      print"the answer is:" ,num1 - num2 * num3
-    elif formula == "*":
-      print"the answer is:" ,num1 * num2 * num3
-    elif formula == "/":
-      print"the answer is:" ,num1 / num2 * num3
-  if formula2 == "/":
-    if formula == "+":
-      print"the answer is:" ,num1 + num2 / num3
-    elif formula == "-":
-      print"the answer is:" ,num1 - num2 / num3
-    elif formula == "*":
-      print"the answer is:" ,num1 * num2 / num3
-    elif formula == "/":
-      print"the answer is:" ,num1 / num2 / num3
-elif opNum == "no":    
-  if formula == "+":
-    print"the answer is:" ,num1 + num2
-  elif formula == "-":
-    print"the answer is:" ,num1 - num2
-  elif formula == "*":
-    print"the answer is:" ,num1 * num2
-  elif formula == "/":
-    print"the answer is:" ,num1 / num2
+      print("the answer is:" ,num1 / num2)
+    break
+
+   else:
+      print("That is not a valid response")
+
